@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="Estilo1.css">
+</head>
+
+
+<!--Titulo de la página-->
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1 id="titulo-principal"> </h1>
+            <p>El mejor café y ambiente para estudiar en el campus.</p>
+        </div>
+    </header>
+
+
+<!--Menú de la página-->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#menu"></a></li>
+                <li><a href="#horario"></a></li>
+                <li><a href="#contacto"></a></li>
+                <li><a href="menu.xml" target="_blank" class="xml-link">Ver Catálogo XML</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<!--Foto del local o negocio de la página-->
+    <main class="container">
+        <section id="intro" class="section-box">
+            <h2></h2>
+            <p></p>
+            <img src="" alt="" width="300" class="responsive-img">
+        </section>
+
+<!--Horario de atención-->
+        <section id="horario" class="section-box">
+            <h2 class="section-title">⏰ Nuestro Horario</h2>
+            <p></p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+
+<!--Menú del local Bebidas, comida-->
+        <section id="menu" class="section-box layout-grid">
+            <h2 class="section-title"></h2>
+            
+            <div class="menu-col">
+                <h3>Bebidas</h3>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <div class="menu-col">
+                <h3>Snacks</h3>
+                <ol>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </div>
+
+<!--Tabla con Precios del Menú-->
+            <div class="full-width">
+                <h3>Precios</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="promo-row">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+<!--Mapa con la ubicación del negocio o local-->
+        <section id="ubicacion" class="section-box">
+            <h2></h2>
+            <p></p>
+            <iframe src="" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+<!--Formulario-->
+        <section id="contacto" class="section-box">
+            <h2 class="section-title">Contáctanos</h2>
+            <form id="contact-form" method="POST">
+                
+                <label for=""></label>
+                <input type="" id="" name="" required placeholder="">
+                
+                <label for=""></label>
+                <input type="" id="" name="" required placeholder="">
+                
+                <label for=""></label>
+                <select id="" name="" required>
+                    <option value="">Selecciona un asunto</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Escribe tu mensaje (Mínimo 10 caracteres)" pattern=".{10,}" title="El mensaje debe tener al menos 10 caracteres."></textarea>
+                
+                <button type="submit" class="submit-button">Enviar Mensaje</button>
+            </form>
+        </section>
+        <script>
+        // COMENTARIOS EN CÓDIGO: Función para manejar el envío y usar localStorage
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            // 1. Prevenir el envío normal del formulario (Evita la recarga/navegación)
+            event.preventDefault(); 
+            
+            // 2. Recolectar datos del formulario
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                correo: document.getElementById('correo').value,
+                asunto: document.getElementById('asunto').value,
+                mensaje: document.getElementById('mensaje').value,
+                fechaEnvio: new Date().toLocaleString()
+            };
+
+            // 3. Guardar los datos como una cadena JSON en localStorage
+            try {
+                // localStorage solo guarda cadenas, así que convertimos el objeto a JSON
+                localStorage.setItem('contactoCafeTec', JSON.stringify(formData));
+                
+                // 4. Mostrar una notificación al usuario y limpiar formulario
+                alert('¡Mensaje guardado localmente! (Datos almacenados en localStorage)');
+                this.reset(); // Limpia los campos del formulario
+                
+                console.log('Datos guardados en localStorage:', formData);
+
+            } catch (e) {
+                alert('Error al intentar guardar los datos localmente. El navegador no soporta o tiene lleno el Local Storage.');
+                console.error("Error de Local Storage:", e);
+            }
+        });
+    </script>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Café Tec. Un proyecto estudiantil. | <a href="aviso.html">Aviso de Privacidad</a></p>
+        </div>
+    </footer>
+</body>
+</html>
