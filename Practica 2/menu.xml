@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo_productos>
+    <producto id="P001">
+        <nombre>Latte Premium</nombre>
+        <tipo>Bebida Caliente</tipo>
+        <precio moneda="MXN">45.00</precio>
+        <descripcion>Espresso con leche texturizada y un toque de caramelo.</descripcion>
+    </producto>
+    <producto id="P002">
+        <nombre>Jugo de Naranja Natural</nombre>
+        <tipo>Bebida Fría</tipo>
+        <precio moneda="MXN">30.00</precio>
+        <descripcion>Jugo fresco, recién exprimido en el momento.</descripcion>
+    </producto>
+    <producto id="P003">
+        <nombre>Dona Glaseada</nombre>
+        <tipo>Snack</tipo>
+        <precio moneda="MXN">20.00</precio>
+        <descripcion>Clásica dona con glaseado de azúcar.</descripcion>
+    </producto>
+</catalogo_productos>
